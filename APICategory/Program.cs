@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("CategoryDB");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
-//Inyeccion de dependencia para IProductRepository
+//Inyeccion de dependencia para ICategoryRepository
 builder.Services.AddScoped<ICategoryRepository, CategorySQLRepository>();
 
 builder.Services.AddCors(options =>
